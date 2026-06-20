@@ -1,0 +1,34 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30
+
+    diff_cont:
+      type: diff_drive_controller/DiffDriveController
+
+    joint_broad:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arm_controller:
+      type: position_controllers/JointGroupPositionController
+
+    nozzle_controller:
+      type: position_controllers/JointGroupPositionController
+
+diff_cont:
+  ros__parameters:
+    publish_rate: 50.0
+    base_frame_id: base_link
+    left_wheel_names: ['LF_joint']
+    right_wheel_names: ['RF_Wheel_joint']
+    wheel_separation: 0.66
+    wheel_radius: 0.095
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - Arm_joint
+
+nozzle_controller:
+  ros__parameters:
+    joints:
+      - Nozel_joint

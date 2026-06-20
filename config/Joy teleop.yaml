@@ -1,0 +1,23 @@
+joy_teleop:
+  ros__parameters:
+    arm:
+      type: topic
+      interface_type: std_msgs/msg/Float64MultiArray
+      topic_name: arm_controller/commands
+      deadman_buttons: [6]          # L2, same as driving
+      axis_mappings:
+        data:
+          axis: 3                   # right stick vertical - VERIFY with jstest-gtk
+          scale: 1.57                # joint limit (rad)
+          offset: 0.0
+
+    nozzle:
+      type: topic
+      interface_type: std_msgs/msg/Float64MultiArray
+      topic_name: nozzle_controller/commands
+      deadman_buttons: [6]
+      axis_mappings:
+        data:
+          axis: 4                  # right stick horizontal - VERIFY with jstest-gtk
+          scale: 1.57
+          offset: 0.0
